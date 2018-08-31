@@ -1,0 +1,146 @@
+#root{
+	-fx-background-color:linear-gradient(rgba(50,70,100) 0%, rgba(30,50,80) 100%);
+}
+
+
+#headContainer{
+	-fx-padding:10 0 30;
+}
+
+#title{
+	-fx-font-size:45;
+	-fx-text-fill:linear-gradient(rgba(210,210,230) 0%, rgba(150,150,150) 100%);
+	-fx-font-style:italic;
+	-fx-font-weight:700;
+	-fx-effect:dropshadow(gaussian, rgba(10,10,10,0.5), 2, 1, 4.0, 0.0);
+	-fx-font-varian:small-caps;
+}
+#form{
+	-fx-padding:30;
+}
+
+#form .text-field-message{
+	-fx-max-width:380;
+}
+
+#userLbl, #passLbl{
+	-fx-font-size:15;
+	-fx-font-weight:600;
+	-fx-text-fill:rgba(255,255,255,.5);
+}
+
+#form .text-field{
+	-fx-background-color:rgba(255,255,255,.0);
+	-fx-border-color:transparent linear-gradient(transparent 60%, rgba(255,255,255,.4) 100%) rgba(255,255,255,.4) transparent;
+	-fx-border-width:0 1.5 1.5 0;
+	-fx-background-radius:0,0,0,0;
+	-fx-border-radius:0 0 1 1;
+	-fx-prompt-text-fill:rgba(255,255,255,.3);
+	-fx-font-size:16;
+	-fx-prompt-text-alignment:CENTER;
+	-fx-prompt-text-style:italic;
+	-fx-text-fill:rgba(255,255,255);
+	-fx-accent:rgba(0, 250, 220, .2);
+}
+
+#form .text-field:focused{
+	-fx-border-color:transparent linear-gradient(transparent 60%, rgba(255,255,255,.8) 100%) rgba(255,255,255,.8) transparent;
+}
+
+#form .text-field .context-menu{
+	-fx-font-size:12;
+}
+
+#linkForm{
+	-fx-padding:0 0 0;
+}
+
+.link{
+	-fx-font-size:14;
+	-fx-background-insets:0;
+	-fx-border-width:0;
+	-fx-padding:3;
+	-fx-underline:true;
+}
+
+.link:visited{
+	-fx-text-fill:rgba(15,150,220);
+}
+
+.link:pressed{
+	-fx-text-fill:rgba(40,40,40);
+}
+
+.login-button{
+	-fx-background-color:rgba(255,255,255,.2);
+	-fx-background-insets:0;
+	-fx-background-radius:0;
+	-fx-border-width:.5;
+	-fx-border-color:rgba(255,255,255,.4);
+	-fx-font-size:16;
+	-fx-padding:0 15;
+	-fx-text-fill:rgba(255,255,255);
+	-fx-max-width:300;
+}
+
+.login-button:hover{
+	-fx-background-color:rgba(255,255,255,.25);
+	-fx-border-color:rgba(255,255,255,.5);
+}
+
+.login-button:pressed{
+	-fx-background-color:rgba(255,255,255,.3);
+	-fx-border-color:rgba(255,255,255,.6);
+}
+
+.login-button:disabled{
+	-fx-opacity:.7;
+}
+
+.progress-indicator:disabled{
+	-fx-opacity:1;
+}
+
+.progress-indicator:indeterminate {
+	-fx-progress-color: white;
+	-fx-progress-width:10;
+}
+
+.aster{
+	-fx-fill:rgba(200,200,50,.9);
+	-fx-font-size:16;
+}
+
+.label-box{
+	-fx-padding:0 5;
+}
+
+#userLbl, #userLbl>* #passLbl>*, #passLbl, #backupLbl{
+	-fx-font-weight:700;	
+	-fx-text-fill:rgba(255,255,255,.8);
+}
+
+#backupLbl{
+	-fx-font-size:16;
+}
+
+#restoreBtn:disabled, #cancelBtn:disabled{
+	-fx-opacity:.3;
+}
+
+#backupPathText{
+	-fx-background-image:url("../../../../../../images/browse.png");
+	-fx-background-position:RIGHT 10 BOTTOM 8;
+	-fx-background-size:22 22;
+	-fx-background-repeat:no-repeat;
+	-fx-padding:10 35 5 10;
+	-fx-cursor:HAND;
+}
+
+#form #backupPathText:pressed{
+	-fx-opacity:.6;
+}
+
+.label-box{
+	-fx-paddign:0;
+}

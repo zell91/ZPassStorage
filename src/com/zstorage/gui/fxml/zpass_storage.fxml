@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.*?>
+
+<?import com.zstorage.gui.components.* ?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.Background?>
+
+<StackPane fx:id="root" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zstorage.gui.ZStorageController" stylesheets="@styles/zpass_storage.css">
+	<children>
+		<BorderPane fx:id="pane">
+			<top>
+				<VBox fx:id="topAccount">
+					<children>
+						<StackPane fx:id="headAccount" alignment="CENTER_LEFT">
+							<children>
+								<ImageView fx:id="logo" fitHeight="60" fitWidth="60" opacity="1"  StackPane.alignment="CENTER_RIGHT">
+									<StackPane.margin>
+										<Insets top="0" bottom="0" left="0" right="30" />
+									</StackPane.margin>														
+										<image>
+											 <Image url="@../../../../../images/lock1.png" />
+										</image>
+								</ImageView>						
+								<Label fx:id="titleSmall" text="ZPassStorage" StackPane.alignment="BOTTOM_RIGHT">
+									<StackPane.margin>
+										<Insets top="0" bottom="0" left="0" right="0" />
+									</StackPane.margin>
+								</Label>
+								<Circle fx:id="avatarBox" centerX="30" centerY="30" radius="30" StackPane.alignment="CENTER_LEFT" style="-fx-fill:transparent;">
+									<StackPane.margin>
+										<Insets top="0" bottom="0" left="10" right="0" />
+									</StackPane.margin>										
+									<clip>
+										<ImageView fx:id="avatar" fitHeight="60" opacity="1" preserveRatio="TRUE">		
+											<image>
+												 <Image url="@../../../../../images/user.png" />
+											</image>
+										</ImageView>
+									</clip>												
+								</Circle>									
+								<Label fx:id="user" text="Utente">
+									<StackPane.margin>
+										<Insets top="0" bottom="0" left="85" right="0" />
+									</StackPane.margin>
+								</Label>
+							</children>
+						</StackPane>		
+						<HBox fx:id="buttonBox" StackPane.alignment="BOTTOM_CENTER" alignment="CENTER" spacing="0">
+							<children>
+								<Button styleClass="account-button" fx:id="addBtn" text="Add entry" onAction="#addEntry" />
+								<Region HBox.hgrow="ALWAYS" />
+								<Button styleClass="account-button" fx:id="editAccountBtn" text="Edit" />
+								<Button styleClass="account-button" fx:id="backupBtn" text="Backup" onAction="#backup" />
+								<Button styleClass="account-button" fx:id="logoutBtn" text="Logout" onAction="#logout" />
+							</children>
+						</HBox>				
+					</children>
+				</VBox>
+			</top>
+			<center>
+				<VBox fx:id="content" alignment="CENTER">
+					<ScrollPane fx:id="scrollContent" fitToWidth="TRUE" VBox.vgrow="ALWAYS">
+						<content>
+							<VBox fx:id="entriesBox" spacing="20" alignment="TOP_CENTER" VBox.vgrow="ALWAYS"/>							
+						</content>
+					</ScrollPane>	
+				</VBox>
+			</center>
+			<bottom>
+				<HBox fx:id="bottom">
+					<children>
+						<Label fx:id="stateLbl" text="Ready"/>
+					</children>
+				</HBox>			
+			</bottom>
+		</BorderPane>
+		<VBox fx:id="progressBox" visible="FALSE" alignment="CENTER">
+			<children>
+				<ProgressIndicator fx:id="indicator" prefWidth="40" prefHeight="40" />
+			</children>
+		</VBox>
+	</children>
+</StackPane>

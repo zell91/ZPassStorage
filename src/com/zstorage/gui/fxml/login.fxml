@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+
+<?import com.zstorage.gui.components.* ?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="root" prefWidth="400" prefHeight="700" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zstorage.gui.LoginController" stylesheets="@styles/login.css">
+	<top>
+	
+	</top>
+	<center>
+		<StackPane fx:id="container">
+			<children>
+				<GridPane fx:id="form" alignment="CENTER" vgap="20">
+					<children>
+						<StackPane fx:id="headContainer" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.halignment="CENTER" >
+							<children>
+								<ImageView fx:id="logo" fitHeight="250" fitWidth="250" StackPane.alignment="CENTER" opacity="1">
+									<image>
+										 <Image url="@../../../../../images/lock1.png" />
+									</image>
+								</ImageView>
+								<Label fx:id="title" text="ZPassStorage" StackPane.alignment="BOTTOM_CENTER">
+									<StackPane.margin>
+										<Insets top="0" bottom="10" left="0" right="0" />
+									</StackPane.margin>
+								</Label>		
+							</children>
+						</StackPane>
+						<VBox fx:id="userForm"  GridPane.columnIndex="0" GridPane.rowIndex="1" spacing="0" maxWidth="380" alignment="CENTER" GridPane.valignment="CENTER" GridPane.halignment="CENTER">
+							<children>
+								<TextField styleClass="text-field" fx:id="userText" promptText="Username" onAction="#actionTextField" />
+								<TextFieldMessage fx:id="userTextMessage" type="WARNING" text="Username cannot be empty" />
+							</children>
+						</VBox>
+						<VBox fx:id="passForm" GridPane.columnIndex="0" GridPane.rowIndex="2" spacing="0" maxWidth="380" alignment="CENTER" GridPane.valignment="CENTER" GridPane.halignment="CENTER">
+							<children>
+								<PasswordField styleClass="text-field" fx:id="passText" promptText="Password" onAction="#actionTextField" />
+								<TextFieldMessage fx:id="passTextMessage" type="WARNING" text="Password cannot be empty" alignment="CENTER" />						
+							</children>
+						</VBox>
+						<VBox fx:id="linkForm" GridPane.columnIndex="0" GridPane.rowIndex="3" spacing="0" GridPane.valignment="CENTER" GridPane.halignment="CENTER" alignment="CENTER" maxWidth="380">
+							<children>
+								<Hyperlink styleClass="link" fx:id="forgotPass" text="Restore backup account" onAction="#backupExportView" />
+								<Hyperlink styleClass="link" fx:id="createAccount" text="Create new account" onAction="#showSignUp" />	
+							</children>
+						</VBox>		
+						<Button fx:id="loginBtn" styleClass="login-button" text="Login" onAction="#login" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.halignment="CENTER" />	
+						<StackPane fx:id="loginMessagePane" styleClass="message-pane" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.halignment="CENTER">
+							<children>
+								<TextFieldMessage fx:id="notValidAccountMessage" type="ERROR" text="Password or username incorrect" alignment="CENTER" />
+								<TextFieldMessage fx:id="successLoginMessage" type="SUCCESS" text="Login successful" alignment="CENTER" />												
+								<TextFieldMessage fx:id="createdAccountMessage" type="SUCCESS" text="Account successfully created" alignment="CENTER" />
+								<TextFieldMessage fx:id="successBackupMessage" type="SUCCESS" text="Backup successfully restored" alignment="CENTER" />
+								<TextFieldMessage fx:id="failedBackupMessage" type="ERROR" text="Backup restored failed" alignment="CENTER" />
+								<TextFieldMessage fx:id="existAccountMessage" type="ERROR" text="This account already exists" />
+								<TextFieldMessage fx:id="invalidBackupFileMessage" type="ERROR" text="Backup file invalid or corrupt" />
+								<TextFieldMessage fx:id="validBackupFileMessage" type="SUCCESS" text="Backup file successfully loaded" />																																																												
+							</children>
+						</StackPane>
+					</children>
+					<fx:define>
+						<VBox fx:id="nameSignUp"  GridPane.columnIndex="0" GridPane.rowIndex="1" spacing="0" maxWidth="380" alignment="CENTER" GridPane.valignment="CENTER" GridPane.halignment="CENTER">
+							<children>
+								<HBox styleClass="label-box" fx:id="nameLblBox">
+									<children>
+										<Label fx:id="userLbl" text="Name" contentDisplay="RIGHT" />	
+									</children>
+								</HBox>
+								<TextField styleClass="text-field" fx:id="nameSignText" promptText="" onAction="#actionTextField" />
+							</children>
+						</VBox>					
+						<VBox fx:id="userSignUp"  GridPane.columnIndex="0" GridPane.rowIndex="2" spacing="0" maxWidth="380" alignment="CENTER" GridPane.valignment="CENTER" GridPane.halignment="CENTER">
+							<children>
+								<HBox styleClass="label-box" fx:id="userLblBox">
+									<children>
+										<Label fx:id="userLbl" text="Username" contentDisplay="RIGHT">
+											<graphic>
+												<Text styleClass="aster" text="*" />
+											</graphic>
+										</Label>	
+									</children>
+								</HBox>
+								<TextField styleClass="text-field" fx:id="userSignText" promptText="" onAction="#actionTextField" />
+								<StackPane fx:id="userMsgPane" styleClass="message-pane">
+									<children>
+										<TextFieldMessage fx:id="emptyUserMessage" type="WARNING" text="Username cannot be empty" />
+										<TextFieldMessage fx:id="existUserMessage" type="WARNING" text="Username already exists" />										
+									</children>
+								</StackPane>
+							</children>
+						</VBox>
+						<VBox fx:id="passSignUp" GridPane.columnIndex="0" GridPane.rowIndex="3" spacing="0" maxWidth="380" alignment="CENTER" GridPane.valignment="CENTER" GridPane.halignment="CENTER">
+							<children>
+								<HBox styleClass="label-box" fx:id="passLblBox">
+									<children>
+										<Label fx:id="passLbl" text="Password" contentDisplay="RIGHT">
+											<graphic>
+												<Text styleClass="aster" text="*" />
+											</graphic>
+										</Label>	
+									</children>
+								</HBox>
+								<PasswordField styleClass="text-field" fx:id="passSignText" promptText="" onAction="#createAccount" />
+								<TextFieldMessage fx:id="emptyPassMessage" type="WARNING" text="Password cannot be empty" alignment="CENTER" />																						
+							</children>
+						</VBox>			
+						<Button fx:id="signUpBtn" styleClass="login-button" text="Create account" onAction="#createAccount" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.halignment="CENTER" />	
+						<Button fx:id="cancelBtn" styleClass="login-button" text="Cancel" onAction="#cancelAccount" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.halignment="CENTER" />									
+						
+						<!-- END SIGNUP SECTION -->
+						
+						
+						<!-- BACKUP EXPORT SECTION -->
+						
+						<VBox fx:id="backup"  GridPane.columnIndex="0" GridPane.rowIndex="1" spacing="0" maxWidth="380" alignment="CENTER" GridPane.valignment="CENTER" GridPane.halignment="CENTER">
+							<children>
+								<HBox styleClass="label-box" fx:id="backupLblBox">
+									<children>
+										<Label fx:id="backupLbl" text="Load backup file" />
+									</children>
+								</HBox>
+								<TextField styleClass="text-field" fx:id="backupPathText" onAction="#loadBackup" onMouseClicked="#loadBackup" editable="FALSE" />
+							</children>
+						</VBox>
+						<Ellipsis fx:id="ellipsis" GridPane.columnIndex="0" GridPane.rowIndex="2" numDot="5" />
+						<Button fx:id="restoreBtn" styleClass="login-button" text="Restore" onAction="#restoreBackup" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.halignment="CENTER" disable="TRUE" />	
+												
+						<!-- END BACKUP EXPORT SECTION -->
+						
+						
+					</fx:define>		
+					<rowConstraints>
+						<RowConstraints vgrow="ALWAYS" maxHeight="250" />
+						<RowConstraints vgrow="NEVER"/>
+						<RowConstraints vgrow="NEVER"/>
+						<RowConstraints vgrow="NEVER"/>
+						<RowConstraints vgrow="NEVER"/>
+						<RowConstraints vgrow="NEVER"/>
+						<RowConstraints vgrow="NEVER"/>				
+					</rowConstraints>
+					<columnConstraints>
+						<ColumnConstraints hgrow="ALWAYS" />
+					</columnConstraints>
+				</GridPane>
+			</children>
+		</StackPane>
+	</center>
+</BorderPane>

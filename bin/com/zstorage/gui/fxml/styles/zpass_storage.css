@@ -1,0 +1,183 @@
+#headAccount{
+	-fx-padding:20 20 20 20;
+	-fx-background-color:linear-gradient(transparent 0%, rgba(0,0,0,.5) 100%);
+}
+
+#titleSmall{
+	-fx-font-size:20;
+	-fx-text-fill:linear-gradient(rgba(210,210,230) 0%, rgba(150,150,150) 100%);
+	-fx-font-style:italic;
+	-fx-font-weight:600;
+	-fx-effect:dropshadow(gaussian, rgba(10,10,10,0.5), 2, 1, 4.0, 0.0);
+	-fx-font-variant:small-caps;
+}
+
+#content{
+	-fx-background-color:rgba(230,230,230), rgb(0, 89, 179, .2);
+}
+
+#user{
+	-fx-font-size:30;
+	-fx-text-fill:rgba(255,255,255);
+}
+
+#scrollContent{
+	-fx-background:transparent;
+	-fx-background-color:transparent;
+}
+
+.entry-box{
+	-fx-background-color:rgba(180,180,180), rgba(255,255,255,1);
+	-fx-background-insets:0, 0 1 1 0;
+	-fx-padding:15 0 15;
+}
+
+.entry-box .text-box>.label{
+	-fx-text-fill:rgba(50,50,50,.8);
+	-fx-font-size:15;
+}
+
+.text-box .text-field{
+	-fx-background-color:transparent;
+	-fx-background-insets:0, 0, 0, 0;
+	-fx-text-fill:rgba(50,120,200,.8);
+	-fx-font-weight:700;
+	-fx-font-size:16;
+	-fx-padding:0 10;
+}
+
+.note-box .text-field{
+	-fx-font-weight:600;
+	-fx-font-size:16;
+	-fx-text-fill:rgba(50,50,50,.7);
+	-fx-font-style:italic;
+	
+}
+
+.text-box .text-field:editable{
+	-fx-background-color:rgba(200,200,150), lightyellow;
+	-fx-background-insets:-2 0 0 0 , -1.5 .5 .5 .5;
+	-fx-background-radius:0, 0, 0, 0;
+	-fx-text-fill:rgba(50,50,50,.8);
+	-fx-font-weight:600;
+	-fx-font-style:italic;
+}
+
+.text-box .text-field .context-menu{
+	-fx-font-size:12;
+	-fx-font-weight:600;
+}
+
+#entriesBox{
+	-fx-padding:30;
+}
+
+.button-box{
+	-fx-padding:15 50 0 20;
+}
+
+.text-box{
+	-fx-padding:0;
+	-fx-background-color:linear-gradient(to right, transparent 0%, rgba(200,200,210) 10%, rgba(200,200,210) 90%, transparent 100%), rgba(255,255,255,1);
+	-fx-background-insets:0, 0 0 1.5 0;
+	-fx-max-width:750;
+	-fx-pref-height:32;
+	-fx-max-height:32;	
+}
+
+.show-btn{
+	-fx-background-color:transparent;
+	-fx-background-insets:0,0,0,0;
+	-fx-opacity:.8;
+}
+
+.show-btn:disabled{
+	-fx-opacity:.4;
+}
+
+.show-btn:hover{
+	-fx-opacity:1;
+}
+
+.show-btn:pressed{
+	-fx-opacity:.6;
+}
+
+.entry-box .entry-btn{
+	-fx-background-color:rgba(40, 100, 200);
+	-fx-background-insets:0;
+	-fx-background-radius:0;
+	-fx-border-width:0 .5 .5 0;
+	-fx-border-color:rgba(0,0,100,1);
+	-fx-text-fill:rgba(255,255,255);
+	-fx-font-size:14;
+	-fx-padding:3 10;
+	-fx-pref-width:70;
+}
+
+.entry-box .entry-btn:hover{
+	-fx-background-color:rgba(40, 100, 200, .9);
+}
+
+.entry-box .entry-btn:pressed{
+	-fx-background-color:rgba(40, 100, 200, .7);
+}
+
+.account-button{
+	-fx-background-size:18 18;
+	-fx-background-position:LEFT 9 CENTER;
+	-fx-background-repeat:no-repeat;
+	-fx-background-color:transparent;
+	-fx-background-insets:0;
+	-fx-background-radius:0;
+	-fx-border-width:0;
+	-fx-border-color:rgba(0,0,100,1);
+	-fx-text-fill:rgba(255,255,255);
+	-fx-font-size:15;
+	-fx-alignment:CENTER_LEFT;
+	-fx-padding:5 15 5 30;	
+}
+
+#addBtn{
+	-fx-background-image:url("../../../../../../images/add_btn.png");
+}
+
+#editAccountBtn{
+	-fx-background-image:url("../../../../../../images/edit_btn.png");
+}
+
+#backupBtn{
+	-fx-background-image:url("../../../../../../images/backup.png");
+}
+
+#logoutBtn{
+	-fx-background-image:url("../../../../../../images/logout.png");
+}
+
+
+.account-button:hover{
+	-fx-background-color:linear-gradient(rgba(0,100,255,.3) 0%, rgba(0,100,255,.6) 100%), rgba(255,255,255,.1);
+}
+
+.account-button:pressed{
+	-fx-background-color:linear-gradient(rgba(0,100,255,.3) 0%, rgba(0,100,255,.6) 100%), rgba(255,255,255,.3);
+}
+
+#progressBox{
+	-fx-background-color:rgba(0,0,0,0.5);
+}
+
+#stateLbl{
+	-fx-text-fill:rgba(0,0,0, .9);
+	-fx-font-size:12;
+}
+
+#bottom{
+	-fx-background-color:rgba(180,180,180), rgba(255,255,255,1), linear-gradient(transparent 10%, rgba(0,0,10,.5) 100%);
+	-fx-padding:1 10;
+}
+
+#avatarBox{
+	-fx-border-radius:50;
+	-fx-background-radius:50;
+}
