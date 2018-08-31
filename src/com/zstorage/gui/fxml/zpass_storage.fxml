@@ -35,18 +35,18 @@
 										<Insets top="0" bottom="0" left="0" right="0" />
 									</StackPane.margin>
 								</Label>
-								<Circle fx:id="avatarBox" centerX="30" centerY="30" radius="30" StackPane.alignment="CENTER_LEFT" style="-fx-fill:transparent;">
+								<VBox fx:id="avatarBox" style="-fx-border-radius:50;" StackPane.alignment="CENTER_LEFT">
 									<StackPane.margin>
 										<Insets top="0" bottom="0" left="10" right="0" />
 									</StackPane.margin>										
-									<clip>
+									<children>
 										<ImageView fx:id="avatar" fitHeight="60" opacity="1" preserveRatio="TRUE">		
 											<image>
 												 <Image url="@../../../../../images/user.png" />
 											</image>
 										</ImageView>
-									</clip>												
-								</Circle>									
+									</children>												
+								</VBox>									
 								<Label fx:id="user" text="Utente">
 									<StackPane.margin>
 										<Insets top="0" bottom="0" left="85" right="0" />
